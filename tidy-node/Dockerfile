@@ -12,3 +12,14 @@ RUN apt-get install -y libcurl4-openssl-dev
 
 RUN Rscript -e 'install.packages("Rserve",, "http://rforge.net/")'
 RUN Rscript -e 'install.packages("tidyverse")'
+RUN Rscript -e 'install.packages("forecast")'
+
+RUN apt-get install -y git
+RUN apt-get install -y autoconf
+RUN swipl -g "pack_install(rserve_client, [interactive(false)])" -g "pack_rebuild(rserve_client)"
+
+WORKDIR /srv
+COPY srv .
+
+# https://svn.r-project.org/R/trunk/src/library/base/R/namespace.R
+ENV _R_S3_METHOD_REGISTRATION_NOTE_OVERWRITES_=0
