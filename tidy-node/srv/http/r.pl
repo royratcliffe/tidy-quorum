@@ -3,6 +3,6 @@
 :- autoload(library(http/http_json), [reply_json/1]).
 :- use_module(r/ver).
 
-:- http_handler(root(r/version), version, []).
+:- http_handler(root(r/version), ver, []).
 
-version(_Request) :- r_version(Pairs), reply_json(json(Pairs)).
+ver(_Request) :- r_version(Pairs), reply_json(json(Pairs)).
