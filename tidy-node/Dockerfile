@@ -7,5 +7,8 @@ RUN apt-get update
 RUN apt-get install -y r-base
 RUN apt-get install -y r-base-dev
 
+# for forecast package
+RUN apt-get install -y libcurl4-openssl-dev
+
 RUN Rscript -e 'install.packages("Rserve",, "http://rforge.net/")'
 RUN Rscript -e 'install.packages("tidyverse")'
