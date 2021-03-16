@@ -1,7 +1,14 @@
-version: "3.7"
+version: "3"
 
 services:
 
   tidy-node:
     build: tidy-node
     scale: 3
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8000:8000
