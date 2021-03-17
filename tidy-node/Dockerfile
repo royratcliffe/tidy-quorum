@@ -12,6 +12,10 @@ RUN apt-get install -y libcurl4-openssl-dev
 
 RUN Rscript -e 'install.packages("Rserve",, "http://rforge.net/")'
 RUN Rscript -e 'install.packages("tidyverse")'
+RUN Rscript -e 'install.packages("tsibble")'
+RUN Rscript -e 'install.packages("fable")'
+RUN Rscript -e 'install.packages("fable.prophet")'
+RUN Rscript -e 'install.packages("feasts")'
 RUN Rscript -e 'install.packages("forecast")'
 
 RUN apt-get install -y git
