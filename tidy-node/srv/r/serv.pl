@@ -3,9 +3,9 @@
           ]).
 :- autoload(library(process), [process_create/3]).
 
-:- initialization(up, program).
-
 :- dynamic process/1.
+
+:- initialization(up, program).
 
 up :-
     process_create(path('R'),
