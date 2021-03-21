@@ -21,6 +21,7 @@ RUN Rscript -e 'install.packages("forecast")'
 RUN apt-get install -y git
 RUN apt-get install -y autoconf
 RUN swipl -g "pack_install(rserve_client, [interactive(false)])" -g "pack_rebuild(rserve_client)"
+RUN swipl -g "pack_install('git://github.com/royratcliffe/tidy_quorum.git', [interactive(false)])"
 
 WORKDIR /srv
 COPY srv .

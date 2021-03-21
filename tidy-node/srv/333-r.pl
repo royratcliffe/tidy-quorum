@@ -1,3 +1,3 @@
-:- ensure_loaded(r/serv).
-:- ensure_loaded(r/cons).
-:- ensure_loaded(http/r).
+:- load_files([library(r/serv)]).
+:- load_files([library(r/cons)]).
+:- load_files([library(http/r)]).

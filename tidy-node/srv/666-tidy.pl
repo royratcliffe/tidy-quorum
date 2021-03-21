@@ -1,1 +1,1 @@
-:- ensure_loaded(tidy/eval).
+:- load_files([library(tidy/eval)]).
